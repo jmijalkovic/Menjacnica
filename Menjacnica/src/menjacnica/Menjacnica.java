@@ -29,6 +29,9 @@ public class Menjacnica implements MenjacnicaInterfejs{
 	}
 	@Override
 	public void brisanjeKursa(String naziv, GregorianCalendar datum) {
+		if(valute.isEmpty()){
+			throw new RuntimeException("Lista valuta je prazna!");
+		}else{
 		for(int i=0;i<valute.size();i++){
 			if(valute.get(i).getNaziv().equals(naziv)){
 				LinkedList<Kurs> kursnaLista=valute.get(i).getKursevi();
@@ -40,10 +43,14 @@ public class Menjacnica implements MenjacnicaInterfejs{
 				}	
 			}
 		}
+	}
 		
 	}
 	@Override
 	public Kurs pronalazenjeKursa(String naziv, GregorianCalendar datum) {
+		if(valute.isEmpty()){
+			throw new RuntimeException("Lista valuta je prazna!");
+		}else{
 			for(int i=0;i<valute.size();i++){
 				if(valute.get(i).getNaziv().equals(naziv)){
 					LinkedList<Kurs> kursnaLista=valute.get(i).getKursevi();
@@ -54,6 +61,7 @@ public class Menjacnica implements MenjacnicaInterfejs{
 					}
 				}
 			}
+		}
 		return null;
 	}
 }
