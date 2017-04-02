@@ -50,18 +50,23 @@ public class Valuta {
 		return kursevi;
 	}
 	public void setKursevi(LinkedList<Kurs> kursevi) {
+		
 		this.kursevi = kursevi;
 	}
 	public String getNaziv() {
 		return naziv;
 	}
 	public void setNaziv(String naziv) {
+		if(naziv==null || naziv.equals("")==true)
+			throw new RuntimeException();
 		this.naziv = naziv;
 	}
 	public String getSkraceniNaziv() {
 		return skraceniNaziv;
 	}
 	public void setSkraceniNaziv(String skraceniNaziv) {
+		if(skraceniNaziv==null || skraceniNaziv.equals("")==true)
+			throw new RuntimeException();
 		this.skraceniNaziv = skraceniNaziv;
 	}
 	
